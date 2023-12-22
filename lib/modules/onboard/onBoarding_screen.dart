@@ -29,20 +29,16 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
 
   List<BoardingModel> boarding =[
     BoardingModel(
-      image: 'assets/images/flowers 1.jpg',
-      title: 'On Board Title 1',
-      body: 'On Board Body 1',
+      image: 'assets/images/on_board1.jpg',
+      title: 'صوت الطبيعة',
+      body: 'يستحق الاستماع لنحميها من التلوث و التغير المناخي',
     ),
     BoardingModel(
-      image: 'assets/images/flowers 1.jpg',
-      title: 'On Board Title 2',
-      body: 'On Board Body 2',
+      image: 'assets/images/on_board2.png',
+      title: 'صوت الطبيعة',
+      body: 'هو لحن الحياة, دعونا نحافظ عليه بكل حب',
     ),
-    BoardingModel(
-      image: 'assets/images/flowers 1.jpg',
-      title: 'On Board Title 3',
-      body: 'On Board Body 3',
-    ),
+
   ];
 
   bool isLast = false;

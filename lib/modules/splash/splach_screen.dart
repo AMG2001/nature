@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void navigateToNextPage() {
-    Timer(Duration(milliseconds: 2600), () {
+    Timer(Duration(milliseconds: 3600), () {
       Get.to(() => onBoardingScreen(), transition: Transition.leftToRight);
     });
   }
@@ -36,15 +36,25 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       body: SafeArea(
         child: Container(
           width: DeviceDimenssions.width,
           height: DeviceDimenssions.height,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/splash_back.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Center(
-            child: Text("Splach Screen"),
+            child: Image.asset('assets/images/splash11.png',
+              fit: BoxFit.cover,
+            ),
+            ),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
