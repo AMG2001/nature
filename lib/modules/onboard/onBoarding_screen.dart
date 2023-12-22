@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nature_app/modules/login/login_screen.dart';
+import 'package:nature_app/modules/login/view/login_screen.dart';
 import 'package:nature_app/shared/components/components.dart';
 
 

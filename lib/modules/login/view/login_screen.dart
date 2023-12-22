@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nature_app/shared/components/components.dart';
-import 'package:nature_app/modules/register/register_screen.dart';
+import 'package:nature_app/modules/register/view/register_screen.dart';
 import 'package:nature_app/config/device/device_dimenssions.dart';
 class LoginScreen extends StatelessWidget {
 

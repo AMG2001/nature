@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:nature_app/models/questions_and_answers/questions_and_answers_models.dart';
 import 'package:nature_app/services/cloud_storage/cloud_connection.dart';
-import 'package:nature_app/services/shared/maps_keys.dart';
+import 'package:nature_app/shared/maps_keys.dart';
 
 class QuestionsAndAnswersController extends GetxController {
   List<QuestionsAndAnswersDataModel> questionsAndAnswersList = [];

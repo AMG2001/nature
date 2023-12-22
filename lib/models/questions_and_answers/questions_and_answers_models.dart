@@ -1,4 +1,4 @@
-import 'package:nature_app/services/shared/maps_keys.dart';
+import 'package:nature_app/shared/maps_keys.dart';
 
 class QuestionsAndAnswersDataModel {
   late String question;
