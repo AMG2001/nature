@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nature_app/modules/homepage/home_page.dart';
+import 'package:get/get.dart';
+import 'package:nature_app/modules/home_page/view/home_page.dart';
 import 'package:nature_app/shared/components/components.dart';
 import 'package:nature_app/modules/register/view/register_screen.dart';
 import 'package:nature_app/config/device/device_dimenssions.dart';
@@ -41,12 +42,6 @@ class LoginScreen extends StatelessWidget {
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
-                  onFieldSubmitted: (value) {
-                    print(value);
-                  },
-                  onChanged: (value) {
-                    print(value);
-                  },
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Please enter you e-mail! ';
@@ -68,12 +63,6 @@ class LoginScreen extends StatelessWidget {
                   controller: passwordController,
                   keyboardType: TextInputType.name,
                   obscureText: true,
-                  onFieldSubmitted: (value) {
-                    print(value);
-                  },
-                  onChanged: (value) {
-                    print(value);
-                  },
                   validator: (value) {
                     if (value!.isEmpty) {
                       return 'Passwsord is not valid';
@@ -99,12 +88,7 @@ class LoginScreen extends StatelessWidget {
                     height: 50.0,
                     color: Colors.green,
                     onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => HomePage()),
-                        );
-                      }
+                      Get.offAll(HomePage());
                     },
                     child: Text(
                       'LOGIN',
