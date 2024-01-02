@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nature_app/modules/home_page/view/home_page.dart';
 import 'package:nature_app/shared/components/components.dart';
 import 'package:nature_app/modules/register/view/register_screen.dart';
 import 'package:nature_app/config/device/device_dimenssions.dart';
+
 class LoginScreen extends StatelessWidget {
-
-
   var formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,9 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset('assets/images/login12.png',),
+                Image.asset(
+                  'assets/images/login12.png',
+                ),
                 Text(
                   'Login to get more about nature',
                   style: TextStyle(
@@ -39,14 +42,8 @@ class LoginScreen extends StatelessWidget {
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
-                  onFieldSubmitted: (value){
-                    print(value);
-                  },
-                  onChanged: (value){
-                    print(value);
-                  },
-                  validator: (value){
-                    if(value!.isEmpty){
+                  validator: (value) {
+                    if (value!.isEmpty) {
                       return 'Please enter you e-mail! ';
                     }
                     return null;
@@ -66,18 +63,10 @@ class LoginScreen extends StatelessWidget {
                   controller: passwordController,
                   keyboardType: TextInputType.name,
                   obscureText: true,
-                  onFieldSubmitted: (value){
-                    print(value);
-                  },
-                  onChanged: (value){
-                    print(value);
-
-                  },
-                  validator: (value){
-                    if(value!.isEmpty){
+                  validator: (value) {
+                    if (value!.isEmpty) {
                       return 'Passwsord is not valid';
-                    }
-                    else if(value.length<8){
+                    } else if (value.length < 8) {
                       return 'Passwsord is too short';
                     }
                     return null;
@@ -88,7 +77,6 @@ class LoginScreen extends StatelessWidget {
                     prefixIcon: Icon(
                       Icons.lock_outlined,
                     ),
-
                   ),
                 ),
                 SizedBox(
@@ -99,8 +87,8 @@ class LoginScreen extends StatelessWidget {
                   child: MaterialButton(
                     height: 50.0,
                     color: Colors.green,
-                    onPressed: (){
-
+                    onPressed: () {
+                      Get.offAll(HomePage());
                     },
                     child: Text(
                       'LOGIN',
@@ -109,7 +97,6 @@ class LoginScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -123,14 +110,13 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     Text(
                       'Don\'t have an account!!',
-
                     ),
                     TextButton(
-                        onPressed: (){
+                        onPressed: () {
                           navigateTo(context, RegisterScreen());
                         },
                         child: Text(
-                            'REGISTER!',
+                          'REGISTER!',
                           style: TextStyle(
                             color: Colors.green,
                           ),
