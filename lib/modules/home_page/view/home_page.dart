@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nature_app/modules/home_page/components/touchable_card.dart';
+import 'package:nature_app/modules/images/images_screen.dart';
+import 'package:nature_app/modules/podcasts/podcasts_screen.dart';
+import 'package:nature_app/modules/videos/videos_screen.dart';
+import 'package:nature_app/shared/components/components.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,33 +12,39 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home page"),
-      ),
+
+    ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
         child: ListView(
           children: [
             Text(
-              "Dummy Text Here",
-              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+              "Have a look at the beauty of nature!!",
+              style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+              ),
             ),
             TouchableCard(
-              title: 'Title 1',
+              title: 'Images',
               subtutle: 'subtitle 1',
-              onTap: () {},
-              color: Colors.yellow,
+              onTap: () {
+                navigateTo(context, ImagesScreen());
+              },
             ),
             TouchableCard(
-              title: 'Title 1',
+              title: 'Podcast',
               subtutle: 'subtitle 1',
-              onTap: () {},
-              color: Colors.blueAccent,
+              onTap: () {
+                navigateTo(context, PodcastsScreen());
+              },
             ),
             TouchableCard(
-              title: 'Title 1',
+              title: 'Videos',
               subtutle: 'subtitle 1',
-              onTap: () {},
-              color: Colors.redAccent,
+              onTap: () {
+                navigateTo(context, VideosScreen());
+              },
             ),
           ],
         ),

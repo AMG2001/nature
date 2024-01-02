@@ -10,7 +10,7 @@ class TouchableCard extends StatelessWidget {
       required this.title,
       required this.onTap,
       required this.subtutle,
-      this.color = Colors.red});
+      this.color = Colors.white});
 
   @override
   Widget build(BuildContext context) {
@@ -21,24 +21,31 @@ class TouchableCard extends StatelessWidget {
         width: DeviceDimenssions.width * .8,
         height: DeviceDimenssions.height * .2,
         decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/images/splash_back.jpg'),
+              fit: BoxFit.cover,
+            ),
             borderRadius: BorderRadius.circular(12), color: color),
         child: Stack(
           children: [
-            Positioned(
-              child: Text(
-                title,
-                style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+            Center(
+              child: Positioned(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+                top: 16,
+                left: 16,
               ),
-              top: 16,
-              left: 16,
             ),
+
             Positioned(
               child: Text(
                 subtutle,
-                style: TextStyle(fontSize: 18, color: Colors.white),
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
               bottom: 16,
               left: 16,

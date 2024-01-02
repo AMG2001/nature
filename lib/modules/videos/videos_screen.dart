@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ImagesScreen extends StatelessWidget {
-  const ImagesScreen({Key? key}) : super(key: key);
+class VideosScreen extends StatelessWidget {
+  const VideosScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-          child: Text('Images')),
+        child: Text('videos'),
+      ),
     );
   }
 }

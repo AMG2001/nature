@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nature_app/config/device/device_dimenssions.dart';
+import 'package:nature_app/modules/login/view/login_screen.dart';
 import 'package:nature_app/modules/register/controller/register_page_controller.dart';
 import 'package:nature_app/services/app/general_services.dart';
+
+import '../../../shared/components/components.dart';
 
 class RegisterScreen extends StatelessWidget {
   RegisterScreen({Key? key}) : super(key: key);
@@ -130,7 +133,9 @@ class RegisterScreen extends StatelessWidget {
                               if (_key.currentState!.validate()) {
                                 closeKeyboard();
                                 await controller.registerUser();
+                                navigateTo(context, LoginScreen());
                               }
+
                             },
                             child: Text(
                               'REGISTER',
