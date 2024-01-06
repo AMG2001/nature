@@ -4,7 +4,6 @@ import 'package:nature_app/config/device/device_dimenssions.dart';
 import 'package:nature_app/modules/login/view/login_screen.dart';
 import 'package:nature_app/modules/register/controller/register_page_controller.dart';
 import 'package:nature_app/services/app/general_services.dart';
-
 import '../../../shared/components/components.dart';
 
 class RegisterScreen extends StatelessWidget {
