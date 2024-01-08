@@ -12,7 +12,16 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.settings),
+            tooltip: 'Settings',
+            onPressed: () {
 
+
+            },
+          ),
+        ],
     ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
