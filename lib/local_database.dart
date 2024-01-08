@@ -43,7 +43,8 @@ class LocalDatabase {
     await _dataBox.put('email', email);
   }
 
-  String get email {
+  Future<String?> getEmail() async {
+    // Retrieve password from Hive or other storage
     return _dataBox.get('email', defaultValue: '');
   }
 
@@ -51,9 +52,12 @@ class LocalDatabase {
     await _dataBox.put('password', password);
   }
 
-  String get password {
+  Future<String?> getPassword() async {
+    // Retrieve password from Hive or other storage
     return _dataBox.get('password', defaultValue: '');
   }
+
+
 
 
 
