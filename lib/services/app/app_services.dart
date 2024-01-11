@@ -1,4 +1,5 @@
 import 'package:nature_app/services/cloud_storage/cloud_connection.dart';
+import 'package:nature_app/services/local_storage/local_database.dart';
 
 class ApplicationServices {
   ApplicationServices._privateConstructor();
@@ -10,5 +11,6 @@ class ApplicationServices {
 
   Future<void> launch() async {
     await CloudConnection.instance.initConnection();
+    await LocalDatabase.instance.initDatabase();
   }
 }

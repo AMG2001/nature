@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nature_app/models/users/user_data_model.dart';
-import 'package:nature_app/local_database.dart';
+import 'package:nature_app/services/local_storage/local_database.dart';
 import 'package:nature_app/services/cloud_storage/cloud_services.dart';
 
 class RegisterPageController extends GetxController {
@@ -9,7 +9,6 @@ class RegisterPageController extends GetxController {
   var passwordController = TextEditingController();
   var firstNameController = TextEditingController();
   var lastNameController = TextEditingController();
-
 
   Future<void> registerUser() async {
     try {
@@ -22,19 +21,12 @@ class RegisterPageController extends GetxController {
                   lastNameController.text.trim(),
               email: emailController.text.trim(),
               password: passwordController.text.trim()));
-
-      final database = LocalDatabase();
-      await database.initDatabase();
-      await database.setFirstName(firstNameController.text.trim());
-      await database.setLastName(lastNameController.text.trim());
-      await database.setEmail(emailController.text.trim());
-      await database.setPassword(passwordController.text.trim());
+   
 
       Get.snackbar('Success!', 'Registration Successful....');
-    }catch(error){
+    } catch (error) {
       print('Error during registration: $error');
       Get.snackbar('Error', 'An error occurred during registration.');
     }
-
   }
 }
