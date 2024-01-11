@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nature_app/modules/home_page/view/home_page.dart';
-import 'package:nature_app/modules/login/controller/logn_page_controller.dart';
+import 'package:nature_app/modules/login/controller/login_page_controller.dart';
 import 'package:nature_app/services/app/general_services.dart';
 import 'package:nature_app/shared/components/components.dart';
 import 'package:nature_app/modules/register/view/register_screen.dart';
@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
       ),
       body: GetBuilder<LoginPageController>(
         init: LoginPageController(),
-        builder: (controller){
+        builder: (controller) {
           return Container(
             width: DeviceDimenssions.width,
             height: DeviceDimenssions.height,
@@ -92,13 +92,11 @@ class LoginScreen extends StatelessWidget {
                       child: MaterialButton(
                         height: 50.0,
                         color: Colors.green,
-                        onPressed: () async{
-                            closeKeyboard();
-                            await controller.loginUser();
-                            navigateTo(context, HomePage());
-
-
-
+                        onPressed: () async {
+                          closeKeyboard();
+                          await controller.loginUser(
+                              email: emailController.text.trim(),
+                              password: passwordController.text.trim());
                         },
                         child: Text(
                           'LOGIN',
@@ -122,15 +120,16 @@ class LoginScreen extends StatelessWidget {
                           'Don\'t have an account!!',
                         ),
                         TextButton(
-                            onPressed: () {
-                              navigateTo(context, RegisterScreen());
-                            },
-                            child: Text(
-                              'REGISTER!',
-                              style: TextStyle(
-                                color: Colors.green,
-                              ),
-                            )),
+                          onPressed: () {
+                            navigateTo(context, RegisterScreen());
+                          },
+                          child: Text(
+                            'REGISTER!',
+                            style: TextStyle(
+                              color: Colors.green,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],
