@@ -16,13 +16,10 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.settings),
             tooltip: 'Settings',
-            onPressed: () {
-
-
-            },
+            onPressed: () {},
           ),
         ],
-    ),
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 8.0, right: 8, left: 8),
         child: ListView(
@@ -30,8 +27,8 @@ class HomePage extends StatelessWidget {
             Text(
               "Have a look at the beauty of nature!!",
               style: TextStyle(
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
               ),
             ),
             TouchableCard(

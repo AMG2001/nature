@@ -25,23 +25,21 @@ class TouchableCard extends StatelessWidget {
               image: AssetImage('assets/images/splash_back.jpg'),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(12), color: color),
+            borderRadius: BorderRadius.circular(12),
+            color: color),
         child: Stack(
           children: [
-            Center(
-              child: Positioned(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
-                ),
-                top: 16,
-                left: 16,
+            Positioned(
+              child: Text(
+                title,
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
               ),
+              top: 16,
+              left: 16,
             ),
-
             Positioned(
               child: Text(
                 subtutle,
