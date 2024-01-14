@@ -29,7 +29,7 @@ class TouchableCard extends StatelessWidget {
             color: color),
         child: Stack(
           children: [
-            Positioned(
+            Center(
               child: Text(
                 title,
                 style: TextStyle(
@@ -37,16 +37,10 @@ class TouchableCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Colors.black),
               ),
-              top: 16,
-              left: 16,
             ),
-            Positioned(
-              child: Text(
-                subtutle,
-                style: TextStyle(fontSize: 18, color: Colors.black),
-              ),
-              bottom: 16,
-              left: 16,
+            Text(
+              subtutle,
+              style: TextStyle(fontSize: 18, color: Colors.black),
             )
           ],
         ),

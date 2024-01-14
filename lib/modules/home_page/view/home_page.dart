@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nature_app/modules/home_page/components/touchable_card.dart';
 import 'package:nature_app/modules/images/images_screen.dart';
 import 'package:nature_app/modules/podcasts/podcasts_screen.dart';
+import 'package:nature_app/modules/settings/view/settings_screen.dart';
 import 'package:nature_app/modules/videos/videos_screen.dart';
 import 'package:nature_app/shared/components/components.dart';
 
@@ -16,7 +17,9 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.settings),
             tooltip: 'Settings',
-            onPressed: () {},
+            onPressed: () {
+              navigateTo(context, SettingsScreen());
+            },
           ),
         ],
       ),
@@ -33,21 +36,21 @@ class HomePage extends StatelessWidget {
             ),
             TouchableCard(
               title: 'Images',
-              subtutle: 'subtitle 1',
+              subtutle: '',
               onTap: () {
                 navigateTo(context, ImagesScreen());
               },
             ),
             TouchableCard(
               title: 'Podcast',
-              subtutle: 'subtitle 1',
+              subtutle: '',
               onTap: () {
                 navigateTo(context, PodcastsScreen());
               },
             ),
             TouchableCard(
               title: 'Videos',
-              subtutle: 'subtitle 1',
+              subtutle: '',
               onTap: () {
                 navigateTo(context, VideosScreen());
               },
