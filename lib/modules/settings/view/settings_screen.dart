@@ -4,10 +4,9 @@ import 'package:hive/hive.dart';
 import 'package:nature_app/models/settings/settings.dart';
 import 'package:nature_app/modules/settings/controller/settings_screen_controller.dart';
 
-
 class SettingsScreen extends StatelessWidget {
-
-  final SettingsScreenController settingsController = SettingsScreenController();
+  final SettingsScreenController settingsController =
+      SettingsScreenController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,16 +68,19 @@ class SettingsScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
-
                     children: [
                       Icon(
                         Icons.dark_mode_outlined,
                       ),
-                      SizedBox(width: 10.0,),
-                      Text('Dark Mode',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Dark Mode',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
                       Spacer(),
                       FlutterSwitch(
                         value: settings.isDarkMode,
@@ -97,19 +99,27 @@ class SettingsScreen extends StatelessWidget {
                       Icon(
                         Icons.language,
                       ),
-                      SizedBox(width: 10.0,),
-                      Text('Language',
-                      style: TextStyle(
-                        fontSize: 20.0,
-                      ),),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Text(
+                        'Language',
+                        style: TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
                       Spacer(),
                       DropdownButton<String>(
-                        value: settings.language.contains('en') ? 'en' : 'ar', // Ensure initial value
+                        value: settings.language.contains('en')
+                            ? 'en'
+                            : 'ar', // Ensure initial value
                         items: <String>['en', 'ar']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
-                            child: Text(value == 'en' ? 'English' : 'Arabic'), // Display full names
+                            child: Text(value == 'en'
+                                ? 'English'
+                                : 'Arabic'), // Display full names
                           );
                         }).toList(),
                         onChanged: (value) {
@@ -123,11 +133,59 @@ class SettingsScreen extends StatelessWidget {
               ],
             ),
           ),
+          Divider(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 100, maxHeight: 100),
+                  child: Image.asset('assets/images/loga_university.png'),
+                ),
+                SizedBox(
+                  width: 40.0,
+                ),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 120, maxHeight: 120),
+                  child: Image.asset('assets/images/logo faculty.jpg'),
+                ),
+                SizedBox(
+                  width: 30.0,
+                ),
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 100, maxHeight: 100),
+                  child: Image.asset('assets/images/logo_university_2.png'),
+                ),
+              ],
+            ),
+
+          ),
+          Divider(),
+          Column(
+            children: [
+              Text(
+                  ' : تحت رعاية',
+              ),
+              Text(
+                  ' أ.د / أحمد فرج القاصد (رئيس جامعة المنوفية)',
+              ),
+              Text(
+                  'أ.د / صبحى شرف (نائب رئيس الجامعة لشئون خدمة المجتمع )',
+              ),
+              Text(
+                'أ.د / ندية القاضى (عميد الكلية )',
+              ),
+              Text(
+                ': إشراف ',
+              ),
+              Text(
+                'أ.م.د / شيرين البحيرى(وكيل الكلية لشئون خدمة المجتمع وتنمية البيئة)',
+              ),
+
+            ],
+          ),
         ],
       ),
     );
   }
 }
-
-
-

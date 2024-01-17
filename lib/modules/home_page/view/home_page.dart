@@ -6,6 +6,8 @@ import 'package:nature_app/modules/settings/view/settings_screen.dart';
 import 'package:nature_app/modules/videos/videos_screen.dart';
 import 'package:nature_app/shared/components/components.dart';
 
+import '../../albums/albums_screen.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -38,7 +40,7 @@ class HomePage extends StatelessWidget {
               title: 'Images',
               subtutle: '',
               onTap: () {
-                navigateTo(context, ImagesScreen());
+                navigateTo(context, AlbumScreen());
               },
             ),
             TouchableCard(
