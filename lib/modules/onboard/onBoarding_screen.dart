@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nature_app/modules/login/view/login_screen.dart';
 import 'package:nature_app/shared/components/components.dart';
+import '../home_page/view/home_page.dart';
 
 
 class BoardingModel{
@@ -49,7 +49,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
         actions: [
           TextButton(
               onPressed: (){
-                navigateAndFinish(context, LoginScreen());
+                navigateAndFinish(context, HomePage());
               },
               child: Text(
                   'SKIP!',
@@ -95,7 +95,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                   backgroundColor: Colors.greenAccent,
                   onPressed: (){
                     if(isLast){
-                      navigateAndFinish(context, LoginScreen());
+                      navigateAndFinish(context, HomePage());
                     }
                     else{
                       boardController.nextPage(
